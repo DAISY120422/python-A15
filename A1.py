@@ -1,19 +1,21 @@
-with open("your_file.txt", "r") as file:
-    content = file.read()
-    print("Full content of the file:\n", content)
+from tkinter import *
 
-with open("your_file.txt", "r") as file:
-    print("\nFirst 10 characters:", file.read(10))
+window = Tk()
+window.title('Tkinter Sample Window')
+window.geometry('300x300')
 
-with open("your_file.txt", "r") as file:
-    print("\nFirst line:", file.readline().strip())
+greeting = Label(text = 'Hello Kisha', fg='black', bg='white')
+button = Button(text="Click me", bg='black', fg='white')
+entry = Entry(fg="purple", bg='pink', width = 50)
+greeting.pack()
+button.pack()
+entry.pack()
 
-with open("your_file.txt", "r") as file:
-    print("\nFirst 4 lines:")
-    for _ in range(4):
-        print(file.readline().strip())
+frame = Frame(master=window, relief=RAISED, borderwidth=5)
+frame.pack()
+label = Label(master=frame, text='Sample Frame')
+label.pack()
 
-with open("your_file.txt", "r") as file:
-    print("\nAll lines one by one:")
-    for line in file:
-        print(line.strip())
+textbox = Text(fg='pink', bg='purple')
+textbox.pack()
+window.mainloop()
